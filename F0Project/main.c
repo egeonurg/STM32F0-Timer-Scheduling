@@ -68,21 +68,21 @@ void TIM6_CONFIG()
 void TIM6_IRQHandler(void)
 
 {
-  if (TIM6->SR & TIM_SR_UIF) 
-		{
-				TIM6->SR &= ~(TIM_SR_UIF);
-				interrupt_counter ++ ;  // 25.17 us PER INTERRUPT EVENT 
-		}
+		  	if (TIM6->SR & TIM_SR_UIF) 
+				{
+						TIM6->SR &= ~(TIM_SR_UIF);
+						interrupt_counter ++ ;  // 25.17 us PER INTERRUPT EVENT 
+				}
 
-		/*
-		*	
-		*
-		*
-					USER DEFINED TIMER EVENT SCHEDULE 
-		*
-		*
-		*
-		*/
+				/*
+				*	
+				*
+				*
+							USER DEFINED TIMER EVENT SCHEDULE 
+				*
+				*
+				*
+				*/
 		
 		
 			if(interrupt_counter == 40000)  // RESET COUNTER IN EVERY 1 SECONDS 
